@@ -5,11 +5,17 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./features/About/About.tsx";
 import Movies from "./features/Movies/Movies.tsx";
+import { Provider } from "react-redux";
+import store from "./store.ts";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    ),
     children: [
       { path: "/about", element: <About /> },
       { path: "/movies", element: <Movies /> },

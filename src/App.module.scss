@@ -1,0 +1,33 @@
+@use './styless/shared';
+
+.root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    height: 10vmin;
+    padding: 1rem;
+    filter: invert(1);
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: shared.$primary-color;
+    ul{
+        list-style: none;
+        li{
+            display: inline-block;
+            margin: 10px;
+        }
+    }
+}
+
+.main{
+    min-height: 90vh;
+    color: #fff;
+}

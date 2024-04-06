@@ -1,11 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
-import "./App.css";
+import styles from "./App.module.scss";
 
 function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
+    <div className={styles.root}>
+      <header className={styles.header}>
+        <img className={styles.logo} src="/public/cinema-ico.png" alt="Logo" />
         <ul>
           <li>
             <Link to={"/"}>Home</Link>
@@ -17,11 +17,11 @@ function App() {
             <Link to={"/movies"}>Movies</Link>
           </li>
         </ul>
-        <main>
-          <Outlet />
-        </main>
-      </div>
-    </>
+      </header>
+      <main className={styles.main}>
+        <Outlet />
+      </main>
+    </div>
   );
 }
 

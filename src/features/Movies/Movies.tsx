@@ -2,17 +2,16 @@ import { connect } from "react-redux";
 import { Movie } from "../../reducers/movies";
 import { RootState } from "../../store";
 import MoviesCard from "./MoviesCard";
-import "./Movies.css";
+import styles from "./Movies.module.scss";
 
 interface MoviesProps {
   movies: Movie[];
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 function Movies({ movies }: MoviesProps) {
   return (
     <section>
-      <div className="Movies-list">
+      <div className={styles.list}>
         {movies.map((movie) => (
           <MoviesCard
             key={movie.id}
@@ -31,5 +30,4 @@ const mapStateToProps = (state: RootState) => ({ movies: state.movies.top });
 
 const connector = connect(mapStateToProps);
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default connector(Movies);

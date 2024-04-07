@@ -13,6 +13,10 @@
     a {
         color: shared.$primary-color;
     }
+
+    @media (max-width:shared.$max-mobile-width){
+        margin: 0.5rem;
+    }
 }
 
 .thumbnail{

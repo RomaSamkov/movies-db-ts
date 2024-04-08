@@ -6,16 +6,19 @@ type MovieCardProps = {
   title: string;
   popularity: number;
   overview: string;
+  image?: string;
 };
 
-function MoviesCard({ id, title, popularity, overview }: MovieCardProps) {
+function MoviesCard({
+  id,
+  title,
+  popularity,
+  overview,
+  image = "/public/movie-thumb.png",
+}: MovieCardProps) {
   return (
     <div className={styles.card}>
-      <img
-        className={styles.thumbnail}
-        src="/public/movie-thumb.png"
-        alt="Movie thumbnail"
-      />
+      <img className={styles.thumbnail} src={image} alt="Movie thumbnail" />
       <div>
         <Link to={`/movies/${id}`}>{title}</Link>
       </div>

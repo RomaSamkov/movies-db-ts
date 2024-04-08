@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./MovieCard.module.scss";
+import { Typography } from "@mui/material";
 
 type MovieCardProps = {
   id: number;
@@ -19,11 +20,16 @@ function MoviesCard({
   return (
     <div className={styles.card}>
       <img className={styles.thumbnail} src={image} alt="Movie thumbnail" />
-      <div>
-        <Link to={`/movies/${id}`}>{title}</Link>
-      </div>
+      <Typography variant="h5" gutterBottom>
+        <div>
+          <Link to={`/movies/${id}`}>{title}</Link>
+        </div>
+      </Typography>
       <div>{popularity}</div>
       <div>{overview}</div>
+      <div>
+        <Link to={`/movies/${id}`}>Details</Link>
+      </div>
     </div>
   );
 }

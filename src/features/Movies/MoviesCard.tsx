@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./MovieCard.module.scss";
-import { Typography } from "@mui/material";
+import { Tooltip, Typography } from "@mui/material";
 
 type MovieCardProps = {
   id: number;
@@ -22,7 +22,9 @@ function MoviesCard({
       <img className={styles.thumbnail} src={image} alt="Movie thumbnail" />
       <Typography variant="h5" gutterBottom>
         <div>
-          <Link to={`/movies/${id}`}>{title}</Link>
+          <Tooltip title="Details of film">
+            <Link to={`/movies/${id}`}>{title}</Link>
+          </Tooltip>
         </div>
       </Typography>
       <div>{popularity}</div>
